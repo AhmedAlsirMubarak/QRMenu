@@ -1,0 +1,263 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Manrope', 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --font-display:
+        'Bricolage Grotesque', 'IBM Plex Sans Arabic', ui-sans-serif, system-ui,
+        sans-serif;
+    --font-arabic: 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif;
+
+    /* QRMenu brand palette */
+    --color-ink: #14110f;
+    --color-ink-2: #2e2a26;
+    --color-paper: #fafaf8;
+    --color-sand: #f4f3ef;
+    --color-line: #e7e5e0;
+    --color-line-strong: #d9d6cf;
+    --color-muted-ink: #5f5b55;
+    --color-saffron: #f2b33d;
+    --color-saffron-soft: #fff4dc;
+    --color-forest: #0e4d3f;
+    --color-forest-deep: #0b2e26;
+    --color-forest-soft: #e8f1ee;
+    --color-mint: #c8ddd6;
+    --color-clay: #9a3412;
+    --color-clay-soft: #fff6f2;
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: #14110f;
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.87 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --radius: 0.75rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.87 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.145 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.145 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.985 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.396 0.141 25.723);
+    --destructive-foreground: oklch(0.637 0.237 25.331);
+    --border: oklch(0.269 0 0);
+    --input: oklch(0.269 0 0);
+    --ring: oklch(0.439 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.985 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(0.269 0 0);
+    --sidebar-ring: oklch(0.439 0 0);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Website marquee */
+@keyframes qm-marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/*
+ * Brand theme scope for screens built from the starter-kit UI components (auth, account settings).
+ * Remaps the shadcn tokens to the QRMenu palette and gives inputs/buttons the platform's sizing.
+ * Always light, even if the browser/OS prefers dark mode.
+ */
+.brand-ui {
+    color-scheme: light;
+    --background: #fafaf8;
+    --foreground: #14110f;
+    --card: #ffffff;
+    --card-foreground: #14110f;
+    --popover: #ffffff;
+    --popover-foreground: #14110f;
+    --primary: #14110f;
+    --primary-foreground: #ffffff;
+    --secondary: #f4f3ef;
+    --secondary-foreground: #14110f;
+    --muted: #f4f3ef;
+    --muted-foreground: #5f5b55;
+    --accent: #f4f3ef;
+    --accent-foreground: #14110f;
+    --destructive: #9a3412;
+    --destructive-foreground: #ffffff;
+    --border: #e6e3dc;
+    --input: #d6d2c9;
+    --ring: #0e4d3f;
+    --radius: 0.75rem;
+    font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+}
+
+.brand-ui [data-slot='input'] {
+    height: 46px;
+    border-radius: 12px;
+    background: #fff;
+    padding-inline: 14px;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.brand-ui [data-slot='input']:focus-visible {
+    border-color: #0e4d3f;
+    box-shadow: 0 0 0 3px rgb(14 77 63 / 0.18);
+}
+
+.brand-ui [data-slot='label'] {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.brand-ui [data-slot='button'] {
+    min-height: 44px;
+    border-radius: 12px;
+    padding-inline: 18px;
+    font-weight: 700;
+}
+
+.brand-ui [data-slot='checkbox'] {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+}
+
+.brand-ui [data-slot='checkbox'][data-state='checked'] {
+    background: #0e4d3f;
+    border-color: #0e4d3f;
+}
+
+/* Account settings: each block on a settings page becomes a card. */
+.account-cards > div {
+    border: 1px solid #e6e3dc;
+    border-radius: 18px;
+    background: #fff;
+    padding: 24px;
+}
